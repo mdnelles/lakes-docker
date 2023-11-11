@@ -1,3 +1,6 @@
+# Use the new BuildKit builder
+# syntax=docker/dockerfile:1
+
 # Use an official Node.js runtime as a parent image
 FROM node:18
 

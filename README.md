@@ -47,6 +47,15 @@ Build and run your Docker container using Docker Compose:
 -  docker-compose build
 -  docker-compose up -d
 
+## Installing Docker on Ubuntu
+
+[https://docs.docker.com/engine/install/ubuntu/] (https://docs.docker.com/engine/install/ubuntu/)
+Get version of Ubuntu:
+`lsb_release -a`
+
+Uninstall old versions:
+`for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
