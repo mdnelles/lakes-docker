@@ -19,8 +19,10 @@ COPY . .
 # Build the Next.js application
 RUN npm run build
 
+COPY .next ./.next
+
 # Expose the desired port for your Next.js app
-EXPOSE 3002
+EXPOSE 3000
 
 # Start the Next.js app
-CMD [ "npm", "start" ]
+CMD [ "npm","run", "start" ]

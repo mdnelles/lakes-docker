@@ -40,21 +40,36 @@ Clone your Git repository to your Ubuntu server:
 
 Change into the directory where you cloned your repository
 
--  cd your-repository-name```
+-  cd your-repository-name
 
 Build and run your Docker container using Docker Compose:
 
 -  docker-compose build
 -  docker-compose up -d
+-  docker compose up --build (if you want to rebuild the image)
 
 ## Installing Docker on Ubuntu
 
-[https://docs.docker.com/engine/install/ubuntu/] (https://docs.docker.com/engine/install/ubuntu/)
-Get version of Ubuntu:
-`lsb_release -a`
+[https://docs.docker.com/engine/install/ubuntu/]
 
-Uninstall old versions:
-`for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+-  Get version of Ubuntu:
+   `lsb_release -a`
+
+-  Uninstall old versions:
+   `for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+
+-  Install New version
+   `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+   `systemctl start docker`
+
+-  Test Docker
+   `sudo docker run hello-world`
+
+-  Build docket image
+   `docker build -t <image-name> .`
+
+-  Run docker image
+   `docker run -p 3000:3000 <image-name>`
 
 ## Deploy on Vercel
 

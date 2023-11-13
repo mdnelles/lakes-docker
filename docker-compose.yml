@@ -1,10 +1,14 @@
 version: "3.8" # Use the version that supports BuildKit syntax
 
 services:
-   web:
+   app:
       build:
          context: .
          dockerfile: Dockerfile
+      container_name: container_name-nextjs
       ports:
-         - "3002:3002"
+         - "3000:3000"
+      volumes:
+         - .:/app
+         - /app/node_modules
       restart: always
